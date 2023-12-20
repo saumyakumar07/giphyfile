@@ -4,22 +4,17 @@ import { AppContext } from "@/app/Context";
 import Link from "next/link";
 import { useContext, useState } from "react";
 
+const favoriteCard = () => {
 
-const card = () => {
-
-  const { trending } = useContext(AppContext);
-
-  const [gifs, setgifs] = trending;
+  const { favorite } = useContext(AppContext);
+  const [images, setimages] = favorite;
 
   return (
     <>
-      {gifs.length > 0 ? gifs.map((gif, idx) => {
-        {
-          console.log(gif.id)
-        }
+      {images.length > 0 ? images.map((image, idx) => {
 
-        return <div key={gif.id} className="relative group">
-          <Link href={`/image/${gif.id}`}>  <video autoPlay loop muted src={gif.images.fixed_height.mp4} alt="" className="mb-5" /></Link>
+        return <div key={image.id} className="relative group">
+          <Link href={`/image/${image.id}`}>  <video autoPlay loop muted src={image.images.fixed_height.mp4} alt="" className="mb-5" /></Link>
 
         </div>
       }) : <div>
@@ -53,4 +48,4 @@ const card = () => {
   )
 }
 
-export default card
+export default favoriteCard

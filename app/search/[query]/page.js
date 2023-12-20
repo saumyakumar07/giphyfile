@@ -54,7 +54,7 @@ const search = ({ params }) => {
                     </p>
                 }
             >
-                <div className="flex flex-wrap gap-5 px-5 py-10 ">
+                <div class="flex flex-wrap w-auto h-auto gap-2 py-10 px-5">
 
                     {searchCard()}
                 </div>

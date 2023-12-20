@@ -53,7 +53,6 @@ const page = () => {
   }
 
 
-
   useEffect(() => {
     if (globalData.length === 0) getTrendingImages();
 
@@ -67,7 +66,6 @@ const page = () => {
 
       <h3 className="text-center font-mono text-xl">What's trending today</h3>
 
-      {/* <!-- card  --> */}
       <InfiniteScroll
         dataLength={globalData.length}
         next={getTrendingImages}
@@ -78,14 +76,11 @@ const page = () => {
           </p>
         }
       >
-        <div className=" pt-5 flex flex-wrap gap-5 px-5  ">
+        <div class="flex flex-wrap w-auto h-auto gap-2 py-10 px-5">
 
           {card()}
         </div>
       </InfiniteScroll>
-
-
-
       <ToastContainer />
 
 
