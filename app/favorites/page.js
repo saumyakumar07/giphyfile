@@ -1,5 +1,5 @@
 'use client'
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import axios from "axios";
 import { useContext } from "react";
 import { AppContext } from "@/app/Context";
@@ -11,7 +11,7 @@ import {useAuthState} from 'react-firebase-hooks/auth'
 import {auth} from '@/app/firebase/config'
 import { useRouter } from 'next/navigation';
 
-const FavoritePage = () => {
+const page = () => {
   
   const { favorite } = useContext(AppContext);
     const [fav, setfav] = favorite;
@@ -65,4 +65,4 @@ const FavoritePage = () => {
     );
 };
 
-export default FavoritePage;
+export default page;
