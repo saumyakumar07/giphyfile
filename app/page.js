@@ -19,9 +19,7 @@ const page = () => {
   const [user] = useAuthState(auth);
   const router = useRouter()
 
-  if (!user ){
-    router.push('/signin')
-  }
+ 
 
   const { trending } = useContext(AppContext);
   const [hasMore, setHasMore] = useState(true);
@@ -56,7 +54,9 @@ const page = () => {
   useEffect(() => {
     if (globalData.length === 0) getTrendingImages();
 
-
+    if (!user ){
+      router.push('/signin')
+    }
   }, [])
 
 
