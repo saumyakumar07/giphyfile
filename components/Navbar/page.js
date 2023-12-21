@@ -65,7 +65,7 @@ const navbar = (params) => {
         ) : (
           ""
         )}
-        <button
+        <Link href={"/signin"}
           className="bg-red-500 text-white py-2 px-4 rounded-md cursor-pointer"
           onClick={() => {
             signOut(auth);
@@ -73,7 +73,7 @@ const navbar = (params) => {
           }}
         >
           {user ? "LogOut" : "LogIn"}
-        </button>
+        </Link>
       </div>
 
 
