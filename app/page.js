@@ -3,8 +3,8 @@ import { useContext, useEffect, useState } from "react";
 import { AppContext } from "./Context";
 import InfiniteScroll from "react-infinite-scroll-component";
 
-import {useAuthState} from 'react-firebase-hooks/auth'
-import {auth} from '@/app/firebase/config'
+import { useAuthState } from 'react-firebase-hooks/auth'
+import { auth } from '@/app/firebase/config'
 import { useRouter } from 'next/navigation';
 
 import card from "@/components/Card/page";
@@ -19,7 +19,7 @@ const page = () => {
   const [user] = useAuthState(auth);
   const router = useRouter()
 
- 
+
 
   const { trending } = useContext(AppContext);
   const [hasMore, setHasMore] = useState(true);
@@ -54,11 +54,15 @@ const page = () => {
   useEffect(() => {
     if (globalData.length === 0) getTrendingImages();
 
-    if (!user ){
-      router.push('/signin')
-    }
   }, [])
 
+   useEffect(() => {
+    if (!user) {
+      router.push('/signin')
+    }
+   
+   }, [])
+   
 
   return (
     <>
